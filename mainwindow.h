@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "eagersingleton.h"
+#include "lazysingleton.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,7 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_eagersingleton_clicked();
+    void on_EagerSingleton_clicked();
+
+    void on_LazySingleton_clicked();
 
 private:
     Ui::MainWindow *ui;

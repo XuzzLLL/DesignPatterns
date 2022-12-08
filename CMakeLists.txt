@@ -21,6 +21,8 @@ set(PROJECT_SOURCES
         mainwindow.ui
         include/eagersingleton.h
         src/eagersingleton.cpp
+        include/lazysingleton.h
+        src/lazysingleton.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

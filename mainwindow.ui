@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="eagersingleton">
+   <widget class="QPushButton" name="EagerSingleton">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -25,6 +25,19 @@
     </property>
     <property name="text">
      <string>饿汉式单例模式</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LazySingleton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>懒汉式单例模式</string>
     </property>
    </widget>
   </widget>
