@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         src/eagersingleton.cpp
         include/lazysingleton.h
         src/lazysingleton.cpp
+        include/factorymethod.h
+        src/factorymethod.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "eagersingleton.h"
 #include "lazysingleton.h"
+#include "factorymethod.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,6 +22,8 @@ private slots:
     void on_EagerSingleton_clicked();
 
     void on_LazySingleton_clicked();
+
+    void on_FactoryMethod_clicked();
 
 private:
     Ui::MainWindow *ui;
