@@ -53,6 +53,32 @@
      <string>工厂方法模式</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="SimpleFactory">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>170</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>简单工厂模式</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AbstractFactory">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>抽象工厂模式</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
