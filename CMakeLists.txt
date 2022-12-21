@@ -29,6 +29,12 @@ set(PROJECT_SOURCES
         src/simplefactory.cpp
         include/abstractfactory.h
         src/abstractfactory.cpp
+        include/prototype.h
+        src/prototype.cpp
+        include/builderpattern.h
+        src/builderpattern.cpp
+        include/proxypattern.h
+        src/proxypattern.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

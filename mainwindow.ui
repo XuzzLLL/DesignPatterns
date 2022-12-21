@@ -79,6 +79,45 @@
      <string>抽象工厂模式</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="ProtoType">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>270</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>原型模式</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BuilderPattern">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>建造者模式</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ProxyPattern">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>代理模式</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

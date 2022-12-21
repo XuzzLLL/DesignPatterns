@@ -119,3 +119,88 @@ void MainWindow::on_AbstractFactory_clicked()
     delete tv;
 }
 
+void MainWindow::on_ProtoType_clicked()
+{
+//    /// 用于复用的初始邮件创建
+//    auto *originalMail = new ConcretePrototypeMail("original_title","original_sender","original_rec","original_body","original_attachment");
+//    qDebug() << "originalMail address: "<< originalMail;
+//    originalMail->showMail();
+//    /// 浅拷贝
+//    qDebug() << "====浅拷贝====";
+//    auto *copyMail_A = originalMail;
+//    copyMail_A->changeTitle("copymail_title");
+//    copyMail_A->changeSender("copymail_sender");
+//    copyMail_A->changeRecipients("copymail_rec");
+//    copyMail_A->changeBody("copymail_body");
+//    copyMail_A->changeAtt("copymail_attachment");
+//    qDebug() << "====copyMail_A====";
+//    qDebug() << "copyMail_A address: "<< copyMail_A;
+//    copyMail_A->showMail();
+//    qDebug() << "====originalMail====";
+//    originalMail->showMail();
+//    delete originalMail;
+
+    /// 用于复用的初始邮件创建
+    auto *originalMail = new ConcretePrototypeMail("original_title","original_sender","original_rec","original_body");
+    originalMail->changeAtt("original_attachment");
+    qDebug() << "originalMail address: "<< originalMail;
+    originalMail->showMail();
+    /// 深拷贝
+    qDebug() << "====深拷贝====";
+    auto *copyMail_A = originalMail->clone();
+    copyMail_A->changeTitle("copymail_title");
+    copyMail_A->changeSender("copymail_sender");
+    copyMail_A->changeRecipients("copymail_rec");
+    copyMail_A->changeBody("copymail_body");
+    copyMail_A->changeAtt("copymail_attachment");
+    qDebug() << "====copyMail_A====";
+    qDebug() << "copyMail_A address: "<< copyMail_A;
+    copyMail_A->showMail();
+    qDebug() << "====originalMail====";
+    originalMail->showMail();
+    delete originalMail;
+    delete copyMail_A;
+}
+
+
+void MainWindow::on_BuilderPattern_clicked()
+{
+    //指挥者
+    Director director;
+    //抽象建造者
+    AbstractBuilder *builder;
+    //产品：套餐
+    ProductMeal *meal;
+
+    //指定具体建造者A
+    builder = new ConcreteBuilderMeal_A();
+    director.setBuilder(builder);
+    meal = director.construct();
+    meal->showMeal();
+    delete builder;
+    qDebug() << "======================";
+    //指定具体建造者C
+    builder = new ConcreteBuilderMeal_C();
+    director.setBuilder(builder);
+    meal = director.construct();
+    meal->showMeal();
+    delete builder;
+    qDebug() << "======================";
+    //指定具体建造者B
+    builder = new ConcreteBuilderMeal_B();
+    director.setBuilder(builder);
+    meal = director.construct();
+    meal->showMeal();
+    delete builder;
+
+}
+
+
+void MainWindow::on_ProxyPattern_clicked()
+{
+    Subject *subject;
+    subject = new ProxySubject();
+    subject->business();
+    delete subject;
+}
+

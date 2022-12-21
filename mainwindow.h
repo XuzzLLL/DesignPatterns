@@ -7,6 +7,9 @@
 #include "factorymethod.h"
 #include "simplefactory.h"
 #include "abstractfactory.h"
+#include "prototype.h"
+#include "builderpattern.h"
+#include "proxypattern.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +33,12 @@ private slots:
     void on_SimpleFactory_clicked();
 
     void on_AbstractFactory_clicked();
+
+    void on_ProtoType_clicked();
+
+    void on_BuilderPattern_clicked();
+
+    void on_ProxyPattern_clicked();
 
 private:
     Ui::MainWindow *ui;
