@@ -24,17 +24,14 @@ set(PROJECT_SOURCES
         include/lazysingleton.h
         src/lazysingleton.cpp
         include/factorymethod.h
-        src/factorymethod.cpp
         include/simplefactory.h
-        src/simplefactory.cpp
         include/abstractfactory.h
-        src/abstractfactory.cpp
         include/prototype.h
-        src/prototype.cpp
         include/builderpattern.h
-        src/builderpattern.cpp
         include/proxypattern.h
-        src/proxypattern.cpp
+        include/facadepattern.h
+        include/observerpattern.h
+        include/flyweightpattern.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

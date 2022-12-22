@@ -1,1 +1,0 @@
-﻿#include "simplefactory.h"

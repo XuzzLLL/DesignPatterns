@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_EagerSingleton_clicked()
 {
-    qDebug() << "饿汉单例模式";
+    qDebug() << "=== 饿汉单例模式示例 ===";
     EagerSingleton *s1 = EagerSingleton::getInstance();
     EagerSingleton *s2 = EagerSingleton::getInstance();
 
@@ -28,7 +28,7 @@ void MainWindow::on_EagerSingleton_clicked()
 
 void MainWindow::on_LazySingleton_clicked()
 {
-    qDebug() << "懒汉单例模式";
+    qDebug() << "=== 懒汉单例模式示例 ===";
     LazySingleton *s1 = LazySingleton::getInstance();
     LazySingleton *s2 = LazySingleton::getInstance();
 
@@ -46,7 +46,7 @@ void MainWindow::on_LazySingleton_clicked()
 
 void MainWindow::on_FactoryMethod_clicked()
 {
-    qDebug() << "工厂方法模式";
+    qDebug() << "=== 工厂方法模式示例 ===";
     //定义工厂类对象和产品类对象
     AbstractBallProduct *product = nullptr;
     AbstractFactory *factory = nullptr;
@@ -71,10 +71,9 @@ void MainWindow::on_FactoryMethod_clicked()
     delete product;
 }
 
-
 void MainWindow::on_SimpleFactory_clicked()
 {
-    qDebug() << "简单工厂模式";
+    qDebug() << "=== 简单工厂模式示例 ===";
     //定义工厂类对象
     AbstractSimpleBallProduct *product = nullptr;
     product = SimpleFactory::getProduct("Basketball");
@@ -90,11 +89,9 @@ void MainWindow::on_SimpleFactory_clicked()
     delete product;
 }
 
-
 void MainWindow::on_AbstractFactory_clicked()
 {
-    qDebug() << "抽象工厂模式";
-
+    qDebug() << "=== 抽象工厂模式示例 ===";
     //定义工厂类对象和产品类对象
     AbstractPhoneProduct *phone = nullptr;
     AbstractTVProduct *tv = nullptr;
@@ -121,6 +118,7 @@ void MainWindow::on_AbstractFactory_clicked()
 
 void MainWindow::on_ProtoType_clicked()
 {
+    qDebug() << "=== 原型模式示例 ===";
 //    /// 用于复用的初始邮件创建
 //    auto *originalMail = new ConcretePrototypeMail("original_title","original_sender","original_rec","original_body","original_attachment");
 //    qDebug() << "originalMail address: "<< originalMail;
@@ -162,9 +160,9 @@ void MainWindow::on_ProtoType_clicked()
     delete copyMail_A;
 }
 
-
 void MainWindow::on_BuilderPattern_clicked()
 {
+    qDebug() << "=== 建造者模式示例 ===";
     //指挥者
     Director director;
     //抽象建造者
@@ -195,12 +193,80 @@ void MainWindow::on_BuilderPattern_clicked()
 
 }
 
-
 void MainWindow::on_ProxyPattern_clicked()
 {
+    qDebug() << "=== 代理模式示例 ===";
     Subject *subject;
     subject = new ProxySubject();
     subject->business();
     delete subject;
+}
+
+void MainWindow::on_FacadePattern_clicked()
+{
+    qDebug() << "=== 外观模式示例 ===";
+    auto *powerOnButton = new PowerOnButton();
+    powerOnButton->pressButton();
+    delete powerOnButton;
+}
+
+void MainWindow::on_ObserverPattern_clicked()
+{
+    qDebug() << "=== 外观模式示例 ===";
+    Blog *blog = new BlogCSDN("墨1024");
+    Observer *observer1 = new ObserverBlog("张三",blog);
+    Observer *observer2 = new ObserverBlog("李四",blog);
+    blog->attach(observer1);
+    blog->attach(observer2);
+    qDebug() << "==================";
+    blog->setStatus("发表了一篇Blog");
+    blog->notify();
+    qDebug() << "==================";
+    blog->remove(observer1);
+    blog->setStatus("更新了一条blink");
+    blog->notify();
+    qDebug() << "==================";
+    delete blog;
+    delete observer1;
+    delete observer2;
+}
+
+
+void MainWindow::on_FlyweightPattern_clicked()
+{
+    ChessPiece *black1,*black2,*black3,*white1,*white2;
+    ChessPieceFactory *factory;
+
+    //获取享元工厂对象
+    factory = ChessPieceFactory::getInstance();
+
+    //通过享元工厂获取三颗黑子
+    black1 = factory->getChessPiece("b");
+    black2 = factory->getChessPiece("b");
+    black3 = factory->getChessPiece("b");
+    qDebug() << "两颗黑子是否相同：" << (black1==black2);
+
+    //通过享元工厂获取两颗白子
+    white1 = factory->getChessPiece("w");
+    white2 = factory->getChessPiece("w");
+    qDebug() << "两颗白子是否相同：" << (white1==white2);
+
+    std::vector<Coordinates *> coordinates;
+    //std::function<Coordinates *(Coordinates *)> func = [&coordinates](Coordinates *coord ) {
+    auto func = [&coordinates](Coordinates *coord ) {
+        coordinates.push_back(coord);
+        return coord;
+    };
+    //显示棋子
+    black1->display(func(new Coordinates(1,3)));
+    black2->display(func(new Coordinates(2,6)));;
+    black3->display(func(new Coordinates(4,7)));;
+    white1->display(func(new Coordinates(5,8)));;
+    white2->display(func(new Coordinates(4,1)));;
+
+    for (auto & coordinate : coordinates) {
+        delete coordinate;
+    }
+
 }
 

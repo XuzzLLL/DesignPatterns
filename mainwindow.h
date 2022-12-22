@@ -10,6 +10,9 @@
 #include "prototype.h"
 #include "builderpattern.h"
 #include "proxypattern.h"
+#include "facadepattern.h"
+#include "observerpattern.h"
+#include "flyweightpattern.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -39,6 +42,12 @@ private slots:
     void on_BuilderPattern_clicked();
 
     void on_ProxyPattern_clicked();
+
+    void on_FacadePattern_clicked();
+
+    void on_ObserverPattern_clicked();
+
+    void on_FlyweightPattern_clicked();
 
 private:
     Ui::MainWindow *ui;
