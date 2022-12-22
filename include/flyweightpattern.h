@@ -18,10 +18,10 @@ public:
     Coordinates(int x,int y) {
         this->x = x;
         this->y = y;
-        qDebug() << "Coordinates Hello, x = "  << x << " y = " << y;
+        qDebug() << "Coordinates Hello, x = " << x << " y = " << y;
     }
     ~Coordinates() {
-        qDebug() << "Coordinates Bye, x = "  << x << " y = " << y;
+        qDebug() << "Coordinates Bye, x = " << x << " y = " << y;
     }
     int getX() {
         return x;
@@ -38,9 +38,7 @@ public:
 private:
     int x;
     int y;
-
 };
-
 
 /// Flyweight（抽象享元类）：ChessPiece
 class ChessPiece {
@@ -48,13 +46,13 @@ public:
     virtual ~ChessPiece() = default;
     virtual QString getColor() = 0;
     void display(Coordinates *coord) {
-        qDebug() << "棋子颜色：" << getColor()  <<  "，棋子位置："  << "x = "  << coord->getX() <<  "，y = "  << coord->getY();
+        qDebug() << "棋子颜色：" << getColor() << "，棋子位置："
+                 << "x = " << coord->getX() << "，y = " << coord->getY();
     };
 protected:
     ChessPiece() = default;
     QString color;
 };
-
 
 /// ConcreteFlyweight（具体享元类）：BlackChessPiece  WhiteChessPiece
 class BlackChessPiece : public ChessPiece {
@@ -110,7 +108,6 @@ private:
             iter++;
         }
     }
-
     std::map<QString,ChessPiece *> mapChessPiece;
 };
 

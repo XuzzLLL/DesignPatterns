@@ -157,6 +157,19 @@
      <string>享元模式</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="DecoratorPattern">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>170</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>装饰模式</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

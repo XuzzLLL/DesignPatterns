@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
         include/facadepattern.h
         include/observerpattern.h
         include/flyweightpattern.h
+        include/decoratorpattern.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

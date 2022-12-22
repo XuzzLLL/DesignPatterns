@@ -13,6 +13,7 @@
 #include "facadepattern.h"
 #include "observerpattern.h"
 #include "flyweightpattern.h"
+#include "decoratorpattern.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -48,6 +49,8 @@ private slots:
     void on_ObserverPattern_clicked();
 
     void on_FlyweightPattern_clicked();
+
+    void on_DecoratorPattern_clicked();
 
 private:
     Ui::MainWindow *ui;
